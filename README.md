@@ -1,36 +1,49 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+🚀 How to Run the Project
 
-## Getting Started
+Clone the repository
 
-First, run the development server:
+git clone https://github.com/Dev-Shakil/m360ict.git
+cd m360ict
 
-```bash
+
+Install dependencies
+
+npm install
+# or
+yarn install
+
+
+Run the development server
+
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Open in your browser
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+http://localhost:3000
 
-## Learn More
+🧠 Handling Complex Logic
 
-To learn more about Next.js, take a look at the following resources:
+This project involves multiple steps of form onboarding with validation and conditional rendering.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+I used React Hook Form with Zod validation schemas to manage nested fields (personal, emergency, etc.).
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+For age calculation, I created a utility function getAgeFromDOB to dynamically determine if the user is under 21 and display guardian fields.
 
-## Deploy on Vercel
+I replaced native HTML form elements with shadcn/ui components for consistent design and better accessibility.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Error messages are shown directly under each input, ensuring clarity for users during onboarding.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+By splitting the logic into modular components (Step1, Step2, Step3, Step4), each part of the onboarding flow remains maintainable and testable.
+
+📌 Assumptions Made
+
+The user’s date of birth is always provided in a valid format (YYYY-MM-DD).
+
+Emergency contacts are required for all users, but guardian details are required only if the user is under 21.
+
+Department values are fetched from the manager’s data (assumed to be available from the API or context).
+
+Phone numbers are entered in international format (e.g., +1-123-456-7890).
